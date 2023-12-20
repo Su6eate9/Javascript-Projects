@@ -3,23 +3,23 @@ const zipCodeField = document.querySelector("#app form input");
 const main = document.querySelector("#app main");
 
 const renderAddress = (data) => {
-  const logradouro = document.createElement("p");
-  const complemento = document.createElement("p");
-  const bairro = document.createElement("p");
-  const localidade = document.createElement("p");
+  const publicPlace = document.createElement("p");
+  const complement = document.createElement("p");
+  const neighborhood = document.createElement("p");
+  const locality = document.createElement("p");
 
-  logradouro.innerText = `Logradouro: ${data.logradouro}`;
-  complemento.innerText =
+  publicPlace.innerText = `Logradouro: ${data.logradouro}`;
+  complement.innerText =
     data.complemento != ""
       ? `Complemento: ${data.complemento.replace("(", "").replace(")", "")}`
       : null;
-  bairro.innerText = `Bairro: ${data.bairro}`;
-  localidade.innerText = `Cidade: ${data.localidade}/${data.uf}`;
+  neighborhood.innerText = `Bairro: ${data.bairro}`;
+  locality.innerText = `Cidade: ${data.localidade}/${data.uf}`;
 
-  main.appendChild(logradouro);
-  main.appendChild(complemento);
-  main.appendChild(bairro);
-  main.appendChild(localidade);
+  main.appendChild(publicPlace);
+  main.appendChild(complement);
+  main.appendChild(neighborhood);
+  main.appendChild(locality);
 };
 
 const renderError = (text) => {
