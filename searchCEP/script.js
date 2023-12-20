@@ -9,9 +9,10 @@ const renderAddress = (data) => {
   const localidade = document.createElement("p");
 
   logradouro.innerText = `Logradouro: ${data.logradouro}`;
-  complemento.innerText = `Complemento: ${data.complemento
-    .replace("(", "")
-    .replace(")", "")}`;
+  complemento.innerText =
+    data.complemento != ""
+      ? `Complemento: ${data.complemento.replace("(", "").replace(")", "")}`
+      : null;
   bairro.innerText = `Bairro: ${data.bairro}`;
   localidade.innerText = `Cidade: ${data.localidade}/${data.uf}`;
 
